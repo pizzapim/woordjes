@@ -17,7 +17,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: woordjes
+  database: woordjes_test
   username: postgres
   password: root
 
