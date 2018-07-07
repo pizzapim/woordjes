@@ -21,7 +21,6 @@ class ListsController < ApplicationController
   # Create the list submitted by the user.
   def create
     @list = current_user.lists.new(list_params)
-    puts @list.inspect
     if @list.save
       redirect_to list_path(@list.id)
     else
@@ -37,6 +36,13 @@ class ListsController < ApplicationController
   # Update a list.
   def update
 
+  end
+
+  # Delete a list.
+  def destroy
+    @list = current_user.lists.find(params[:id])
+    @list.destroy
+    redirect_to lists_path
   end
 
   # Get more link fields by AJAX.

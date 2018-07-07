@@ -1,8 +1,8 @@
 class List < ApplicationRecord
   # Associations
   belongs_to :user
-  has_many :links, index_errors: true
-  accepts_nested_attributes_for :links, reject_if: proc {|attributes| attributes['word1'].blank? && attributes['word2'].blank?}
+  has_many :links, index_errors: true, dependent: :destroy
+  accepts_nested_attributes_for :links, allow_destroy: true, reject_if: proc {|attributes| attributes['word1'].blank? && attributes['word2'].blank?}
 
   # Callbacks
   before_validation do
