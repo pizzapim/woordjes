@@ -1,0 +1,12 @@
+<h3>List number <%= @list.id %></h3>
+Title: <%= @list.title %><br>
+Subject: <%= @list.subject %><br>
+Topic 1: <%= @list.topic1 %><br>
+Topic 2: <%= @list.topic2 %><br>
+<h3>Words:</h3><br>
+-------------<br>
+<% @list.links.each do |link| %>
+  Word 1: <%= link.word1 %><br>
+  Word 2: <%= link.word2 %><br>
+  ------------<br>
+<% end %>

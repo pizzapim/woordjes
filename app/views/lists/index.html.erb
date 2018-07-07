@@ -1,0 +1,9 @@
+<%= link_to "Create a new list", new_list_path %>
+<% @lists.each do |list| %>
+  <h3>List number <%= list.id %></h3>
+  Title: <%= list.title %><br>
+  Subject: <%= list.subject %><br>
+  Topic 1: <%= list.topic1 %><br>
+  Topic 2: <%= list.topic2 %><br>
+  <%= link_to "Show this list", list_path(list.id) %>
+<% end %>
