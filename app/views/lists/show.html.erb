@@ -11,4 +11,5 @@ Topic 2: <%= @list.topic2 %><br>
   Word 2: <%= link.word2 %><br>
   ------------<br>
 <% end %>
+<%= link_to "Edit this list", edit_list_path(@list) %>
 <%= button_to "Delete this list", @list, method: :delete %>

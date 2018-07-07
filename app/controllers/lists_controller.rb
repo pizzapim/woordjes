@@ -30,12 +30,20 @@ class ListsController < ApplicationController
 
   # Edit a list.
   def edit
-
+    @list = current_user.lists.find(params[:id])
+    10.times do
+      @list.links.build
+    end
   end
 
   # Update a list.
   def update
-
+    @list = current_user.lists.find(params[:id])
+    if @list.update(list_params)
+      redirect_to list_path(@list)
+    else
+      render 'edit'
+    end
   end
 
   # Delete a list.
@@ -52,6 +60,6 @@ class ListsController < ApplicationController
 
   private
   def list_params
-    params.require(:list).permit(:title, :subject, :topic1, :topic2, {links_attributes: [:word1, :word2]})
+    params.require(:list).permit(:title, :subject, :topic1, :topic2, {links_attributes: [:word1, :word2, :id]})
   end
 end
