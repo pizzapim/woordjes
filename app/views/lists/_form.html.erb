@@ -7,6 +7,9 @@
     <%= links_form.input :word1 %>
     <%= links_form.input :word2 %>
   <% end %>
-  <%= link_to_add_fields("Get more fields", f, :links) %>
+  <%= link_to("Add more fields", "#", id: "add_fields") %>
+  <script>
+    var more_fields = "<%= j(more_fields(f)) %>";
+  </script>
 </div>
 <%= f.button :submit %>
