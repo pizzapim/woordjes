@@ -64,3 +64,6 @@ gem 'devise', '~> 4.4.3'
 
 # Use simple_form to easily create forms
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
+
+# Use JQuery because JS is boringer
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'

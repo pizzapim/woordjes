@@ -1,5 +1,7 @@
 class ListsController < ApplicationController
 
+  before_action :authenticate_user!
+
   # A list of lists for this user.
   def index
     @lists = current_user.lists

@@ -2,8 +2,11 @@
 <%= f.input :subject %>
 <%= f.input :topic1 %>
 <%= f.input :topic2 %>
-<%= f.fields_for :links do |links_form| %>
-  <%= links_form.input :word1 %>
-  <%= links_form.input :word2 %>
-<% end %>
+<div id="links">
+  <%= f.fields_for :links do |links_form| %>
+    <%= links_form.input :word1 %>
+    <%= links_form.input :word2 %>
+  <% end %>
+  <%= link_to_add_fields("Get more fields", f, :links) %>
+</div>
 <%= f.button :submit %>
