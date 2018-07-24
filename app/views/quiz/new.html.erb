@@ -1,0 +1,7 @@
+<%= link_to "Return to lists", lists_path %>
+<h3>Start a quiz for <i><%= @list.title %></i></h3>
+<%= simple_form_for(:quiz, url: start_quiz_path(@list.id), method: :post) do |f| %>
+  <%= f.input :quiz_type, collection: quiz_types, selected: nil %>
+  <%= f.input :direction, collection: [["#{@list.topic1} -> #{@list.topic2}", 1], ["#{@list.topic2} -> #{@list.topic1}", 2]], selected: nil %>
+  <%= f.button :submit, "Start the quiz" %>
+<% end %>

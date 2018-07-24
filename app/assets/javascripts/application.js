@@ -15,3 +15,6 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// Constants
+var quiz_types = ["normal"];

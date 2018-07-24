@@ -6,4 +6,8 @@ module ApplicationHelper
     end
     link_to(name, "#", id: "add_fields", data: {association: association, fields: fields})
   end
+
+  def quiz_types
+    ["normal"]
+  end
 end

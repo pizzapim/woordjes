@@ -6,4 +6,5 @@
   Topic 1: <%= list.topic1 %><br>
   Topic 2: <%= list.topic2 %><br>
   <%= link_to "Show this list", list_path(list.id) %>
+  <%= link_to "Quiz this list", new_quiz_path(list.id) %>
 <% end %>
