@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   # Quiz routes
   get '/quiz/:list_id/new', to: 'quiz#new', as: :new_quiz
-  post '/quiz/:list_id', to: 'quiz#start', as: :start_quiz
+  match '/quiz/:list_id', to: 'quiz#quiz', as: :start_quiz, via: [:get, :post]
 end

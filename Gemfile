@@ -67,3 +67,6 @@ gem 'simple_form', '~> 4.0', '>= 4.0.1'
 
 # Use JQuery because JS is boringer
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+
+# Use gon to parse ruby vars to js.
+gem 'gon', '~> 6.2', '>= 6.2.1'
