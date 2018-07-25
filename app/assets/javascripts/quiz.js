@@ -29,7 +29,11 @@ function normalQuizInit() {
   quizQuestions = Object.assign([], parsed.list.links); // Warning! The individual links are a reference to parsed.list.links and should not be edited.
   shuffleArray(quizQuestions);
   $("#check-answer").click(normalQuizCheck);
-  // TODO: also check on enter button pressed.
+  $(document).keypress(function(e) {
+    if (e.which == 13) {
+      normalQuizCheck();
+    }
+  });
   $("#display-question").html(quizQuestions[0][word(1)]);
   $("#answer-input").val("");
 }
