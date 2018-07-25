@@ -1,1 +1,4 @@
 <h3>Quiz for <i><%= @list.title %></i></h3>
+<div id="quiz-container">
+  <%= render :partial => "quiz/quiz_containers/" + params[:quiz][:quiz_type], locals: {quiz_type: params[:quiz][:quiz_type]} %>
+</div>
