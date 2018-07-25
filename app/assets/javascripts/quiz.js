@@ -47,6 +47,7 @@ function normalQuizCheck() {
       $("#answer-feedback").html("Correct!");
     } else {
       $("#answer-feedback").html("Incorrect. The correct answer is: " + quizQuestions[currentQuestion][word(2)]);
+      quizQuestions.splice(currentQuestion + 2 + Math.floor(Math.random() * 3), 0, quizQuestions[currentQuestion]);
     }
     $("#answer-input").val("");
     currentQuestion++;
