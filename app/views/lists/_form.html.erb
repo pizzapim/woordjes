@@ -1,3 +1,4 @@
+<% @gon.more_fields = more_fields(f) %>
 <%= f.input :title %>
 <%= f.input :subject %>
 <%= f.input :topic1 %>
@@ -8,8 +9,5 @@
     <%= links_form.input :word2 %>
   <% end %>
   <%= link_to("Add more fields", "#", id: "add_fields") %>
-  <script>
-    var more_fields = "<%= j(more_fields(f)) %>";
-  </script>
 </div>
 <%= f.button :submit %>

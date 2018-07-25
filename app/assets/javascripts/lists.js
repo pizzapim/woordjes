@@ -5,7 +5,7 @@ function add_fields(link, association, content) {
 }
 $(document).on('turbolinks:load', function() {
   $('#add_fields').click(function() {
-    add_fields(this, "links", more_fields.repeat(10));
+    add_fields(this, "links", parsed.more_fields.repeat(10));
     return false;
   });
 });

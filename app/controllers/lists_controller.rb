@@ -1,6 +1,9 @@
 class ListsController < ApplicationController
 
   before_action :authenticate_user!
+  before_action only: [:new, :edit] do
+    @gon = gon
+  end
 
   # A list of lists for this user.
   def index
@@ -53,11 +56,6 @@ class ListsController < ApplicationController
     @list = current_user.lists.find(params[:id])
     @list.destroy
     redirect_to lists_path
-  end
-
-  # Get more link fields by AJAX.
-  def get_more_fields
-
   end
 
   private
