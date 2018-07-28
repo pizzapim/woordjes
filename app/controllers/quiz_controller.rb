@@ -1,5 +1,4 @@
 class QuizController < ApplicationController
-  # Test to see if I can mark an issue as resolved :)))
   before_action :authenticate_user!
   before_action :find_list
   before_action :valid_options_params, only: :quiz

@@ -2,6 +2,7 @@ class List < ApplicationRecord
   # Associations
   belongs_to :user
   has_many :links, index_errors: true, dependent: :destroy
+  has_one :quiz_result, dependent: :destroy
   accepts_nested_attributes_for :links, allow_destroy: true, reject_if: :reject_links
 
   def reject_links(attributes)
