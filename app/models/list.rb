@@ -27,4 +27,12 @@ class List < ApplicationRecord
     list.errors.add(attribute, "can't be too long.") if value.length > 15
   end
   validates :links, length: {minimum: 1, too_short: "enter at least one word."}
+
+  def as_json(options = nil)
+    if options && options[:for_js]
+      super(except: [:updated_at, :created_at, :user_id]).tap{|list| list["links"] = List.first.links.index_by{|link| link.id}.transform_values!{|link| link.as_json(only: [:word1, :word2])}}
+    else
+      super
+    end
+  end
 end

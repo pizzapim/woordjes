@@ -1,7 +1,5 @@
 var quiz_conf = {};
-
 var list = {};
-
 var quizQuestions = [];
 var currentQuestion = 0;
 var state = "awaitingInput";
@@ -21,8 +19,7 @@ $('body.quiz-quiz').ready(function () {
 
 function normalQuizInit() {
   // In a normal quiz, we randomize the order of the words. After that, we display the next question.
-  quizQuestions = Object.assign([], parsed.list.links); // Warning! The individual links are a reference to parsed.list.links and should not be edited.
-  // TBD: don't duplicate the questions, but save the array indices and shuffle those.
+  quizQuestions = Object.keys(list.links);
   shuffleArray(quizQuestions);
   $("#check-answer").click(normalQuizCheck);
   $(document).keypress(function(e) {
@@ -30,7 +27,7 @@ function normalQuizInit() {
       normalQuizCheck();
     }
   });
-  $("#display-question").html(quizQuestions[0][word(1)]);
+  $("#display-question").html(word(0, 1));
   $("#answer-input").val("");
 }
 
@@ -39,12 +36,12 @@ function normalQuizCheck() {
     var answer = $("#answer-input").val();
     $("#answer-input").hide();
     $("#answer-feedback").show();
-    if (answer == quizQuestions[currentQuestion][word(2)]) {
+    if (answer == word(currentQuestion, 2)) {
       $("#answer-feedback").html("Correct!");
     } else {
-      $("#answer-feedback").html("Incorrect. The correct answer is: " + quizQuestions[currentQuestion][word(2)]);
+      $("#answer-feedback").html("Incorrect. The correct answer is: " + word(currentQuestion, 2));
       quizQuestions.splice(currentQuestion + 2 + Math.floor(Math.random() * 3), 0, quizQuestions[currentQuestion]);
-      errors.push({id: quizQuestions[currentQuestion].id, actualAnswer: quizQuestions[currentQuestion][word(2)], userAnswer: answer});
+      errors.push({id: quizQuestions[currentQuestion], userAnswer: answer});
     }
     $("#answer-input").val("");
     currentQuestion++;
@@ -60,13 +57,17 @@ function normalQuizCheck() {
     }
     $("#answer-input").show();
     $("#answer-feedback").hide();
-    $("#display-question").html(quizQuestions[currentQuestion][word(1)]);
+    $("#display-question").html(word(currentQuestion, 1));
     $("#check-answer").val("Check answer");
     state = "awaitingInput";
   }
 }
 
-function word(which){
+function word(link_id, which){
+  return list.links[quizQuestions[link_id]][keyForQuizQuestions(which)];
+}
+
+function keyForQuizQuestions(which) {
   if (which == 1) {
     if (quiz_conf.direction == "normal") {
       return "word1";

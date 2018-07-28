@@ -6,7 +6,7 @@ class QuizController < ApplicationController
   before_action :save_quiz_options, only: :quiz
 
   def quiz
-    gon.list = @list.as_json(include: :links)
+    gon.list = @list.as_json(for_js: true)
     gon.quiz = params[:quiz]
   end
 
