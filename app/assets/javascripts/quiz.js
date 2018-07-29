@@ -3,7 +3,8 @@ var list = {};
 var quizQuestions = [];
 var currentQuestion = 0;
 var state = "awaitingInput";
-var errors = [];
+var quiz_errors = [];
+var correct = 0;
 
 $('body.quiz-quiz').ready(function () {
   quiz_conf.quiz_type = parsed.quiz.quiz_type;
@@ -38,10 +39,11 @@ function normalQuizCheck() {
     $("#answer-feedback").show();
     if (answer == word(currentQuestion, 2)) {
       $("#answer-feedback").html("Correct!");
+      correct++;
     } else {
       $("#answer-feedback").html("Incorrect. The correct answer is: " + word(currentQuestion, 2));
       quizQuestions.splice(currentQuestion + 2 + Math.floor(Math.random() * 3), 0, quizQuestions[currentQuestion]);
-      errors.push({id: quizQuestions[currentQuestion], userAnswer: answer});
+      quiz_errors.push({word1: word(currentQuestion, 1), word2: word(currentQuestion, 2), answer: answer});
     }
     $("#answer-input").val("");
     currentQuestion++;
@@ -53,7 +55,28 @@ function normalQuizCheck() {
     state = "viewingAnswer";
   } else {
     if (currentQuestion == quizQuestions.length) {
-      alert("Redirect to result");
+      $.ajax({
+        type: "POST",
+        url: $("meta[name=quiz_post_url]")[0].content,
+        data: {
+          authenticity_token: $('[name="csrf-token"]')[0].content,
+          quiz_result: {
+            direction: quiz_conf.direction,
+            quiz_type: quiz_conf.quiz_type,
+            correct: correct,
+            quiz_errors_attributes: quiz_errors
+          }
+        },
+        success: function(data){
+          // The AJAX call made it through and data was returned.
+          if (data["status"] == "success") {
+            window.location.href = data["redirect_to"];
+          } else {
+            alert("The result could not be saved due to an error.");
+          }
+        },
+        dataType: "json"
+      }).fail(function(){alert("And error occurred while submitting ");});
     }
     $("#answer-input").show();
     $("#answer-feedback").hide();

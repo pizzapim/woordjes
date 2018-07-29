@@ -4,12 +4,22 @@ Title: <%= @list.title %><br>
 Subject: <%= @list.subject %><br>
 Topic 1: <%= @list.topic1 %><br>
 Topic 2: <%= @list.topic2 %><br>
-<h3>Words:</h3><br>
+<h3>Words:</h3>
 -------------<br>
 <% @list.links.each do |link| %>
   Word 1: <%= link.word1 %><br>
   Word 2: <%= link.word2 %><br>
   ------------<br>
+<% end %>
+<h3>Quiz Results:</h3>
+-------------<br>
+<% @list.quiz_results.each do |quiz_result| %>
+  Finished at: <%= quiz_result.created_at.strftime("%d-%m-%Y %H:%M") %><br>
+  Quiz type: <%= quiz_result.quiz_type %><br>
+  Direction: <%= quiz_result.direction %><br>
+  Percentage correctly answered: <%= ((quiz_result.correct.to_f / (quiz_result.correct + quiz_result.quiz_errors.count)) * 100).to_i %>%<br>
+  <%= link_to("Show quiz result", quiz_result_url(@list.id, quiz_result.id)) %><br>
+  -------------<br>
 <% end %>
 <%= link_to "Quiz this list", new_quiz_path(@list.id) %>
 <%= link_to "Edit this list", edit_list_path(@list) %>

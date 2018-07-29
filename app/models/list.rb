@@ -2,7 +2,7 @@ class List < ApplicationRecord
   # Associations
   belongs_to :user
   has_many :links, index_errors: true, dependent: :destroy
-  has_one :quiz_result, dependent: :destroy
+  has_many :quiz_results, dependent: :destroy
   accepts_nested_attributes_for :links, allow_destroy: true, reject_if: :reject_links
 
   def reject_links(attributes)
@@ -31,7 +31,7 @@ class List < ApplicationRecord
 
   def as_json(options = nil)
     if options && options[:for_js]
-      super(except: [:updated_at, :created_at, :user_id]).tap{|list| list["links"] = List.first.links.index_by{|link| link.id}.transform_values!{|link| link.as_json(only: [:word1, :word2])}}
+      super(except: [:updated_at, :created_at, :user_id]).tap{|list| list["links"] = self.links.index_by{|link| link.id}.transform_values!{|link| link.as_json(only: [:word1, :word2])}}
     else
       super
     end
