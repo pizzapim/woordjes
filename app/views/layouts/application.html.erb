@@ -4,18 +4,38 @@
     <title>Woordjes</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width; initital-scale=1.0">
+    <% if controller_name == "quiz" && action_name == "quiz" %>
+      <meta name="quiz_post_url" content="<%= create_quiz_result_path %>">
+    <% end %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= Gon::Base.render_data(namespace: :parsed) %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <% if controller_name == "quiz" && action_name == "quiz" %>
-      <meta name="quiz_post_url" content="<%= create_quiz_result_path %>">
-    <% end %>
   </head>
 
   <body class="<%= controller_name %>-<%= action_name %>">
+    <header>
+      <%= link_to("woordjes", home_path, id: :site_logo) %>
+      <nav>
+        <ul>
+          <% if user_signed_in? %>
+            <li><%= link_to("Logout", destroy_user_session_path, method: :delete) %></li>
+            <li><%= link_to("My lists", lists_path) %></li>
+          <% else %>
+            <li><%= link_to("Login", new_user_session_path) %></li>
+            <li><%= link_to("Signup", new_user_registration_path) %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+
+    </footer>
   </body>
 </html>

@@ -1,0 +1,24 @@
+#home-banner {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: table;
+}
+
+#home-banner h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 50px;
+  font-weight: 900;
+  color: #111;
+  text-align: center;
+  line-height: 55px;
+}
+
+#home-banner h1 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 28px;
+  font-weight: 100px;
+  color: #111;
+  text-align: center;
+  font-style: italic;
+  line-height: 34px;
+}
