@@ -1,9 +1,7 @@
 class ListsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action only: [:new, :edit] do
-    @gon = gon
-  end
+  before_action :make_gon_available_in_view, only: [:new, :edit]
 
   # A list of lists for this user.
   def index
@@ -29,6 +27,10 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list.id)
     else
+      make_gon_available_in_view if !@gon
+      10.times do
+        @list.links.build
+      end
       render 'new'
     end
   end
@@ -59,6 +61,10 @@ class ListsController < ApplicationController
   end
 
   private
+  def make_gon_available_in_view
+    @gon = gon
+  end
+
   def list_params
     params.require(:list).permit(:title, :subject, :topic1, :topic2, {links_attributes: [:word1, :word2, :id]})
   end
