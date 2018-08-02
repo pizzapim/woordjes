@@ -11,6 +11,26 @@ a {
   vertical-align: middle;
 }
 
+section.content {
+  margin-top: 40px;
+}
+
+/* Flash message styles */
+
+p.notice {
+  text-align: center;
+  background-color: #b2bec3;
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+p.alert {
+  text-align: center;
+  background-color: rgba(255,0,0,0.3);
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
 /* Header styles */
 
 header {
@@ -52,4 +72,55 @@ header nav ul li a{
   font-family: 'Roboto Slab', serif;
   font-size: 20px;
   color: #111;
+}
+
+/* Sign up form styles */
+
+#devise-form {
+  font-family: 'Roboto Slab', serif;
+  padding-bottom: 10px;
+  background-color: #DCDCDC;
+  margin: 0 30px 20px 30px;
+  width: calc(100% - 60px);
+  border-radius: 15px;
+}
+
+#devise-form h2.form-title {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+#devise-form .field {
+  text-align: center;
+}
+
+#devise-form .field label {
+  line-height: 1.6;
+}
+
+#devise-form .actions input {
+  margin: 10px auto;
+  display: block;
+}
+
+#devise-form #error_explanation {
+  background-color: rgba(255,0,0,0.3);
+  margin: 10px;
+  border-radius: 5px;
+}
+
+#devise-form #error_explanation ul{
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+#devise-form #error_explanation li{
+  font-size: 15px;
+}
+
+#devise-form #error_explanation h2{
+  text-align:center;
+  font-weight: 800;
 }

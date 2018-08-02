@@ -23,35 +23,3 @@
   line-height: 34px;
   padding-top: 15px;
 }
-
-#home-signup {
-  font-family: 'Roboto Slab', serif;
-  padding-bottom: 10px;
-}
-
-#home-signup h2 {
-  font-size: 20px;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 5px;
-}
-
-#home-signup .field {
-  text-align: center;
-}
-
-#home-signup .field label {
-  line-height: 1.6;
-}
-
-#home-signup .actions input {
-  margin: 10px auto;
-  display: block;
-}
-
-#home-signup {
-  background-color: #DCDCDC;
-  margin: 0 30px 20px 30px;
-  width: calc(100% - 60px);
-  border-radius: 15px;
-}
