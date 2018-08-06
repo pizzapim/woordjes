@@ -1,3 +1,5 @@
-<%= simple_form_for(@list, url: lists_path, method: :post) do |f| %>
-  <%= render :partial => 'form', :locals=>{:f => f} %>
-<% end %>
+<section class="content">
+  <%= simple_form_for(@list, url: lists_path, method: :post) do |f| %>
+    <%= render :partial => 'form', :locals=>{:f => f} %>
+  <% end %>
+</section>

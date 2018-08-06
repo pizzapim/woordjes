@@ -1,10 +1,14 @@
-<%= link_to "Create a new list", new_list_path %>
-<% @lists.each do |list| %>
-  <h3>List number <%= list.id %></h3>
-  Title: <%= list.title %><br>
-  Subject: <%= list.subject %><br>
-  Topic 1: <%= list.topic1 %><br>
-  Topic 2: <%= list.topic2 %><br>
-  <%= link_to "Show this list", list_path(list.id) %>
-  <%= link_to "Quiz this list", new_quiz_path(list.id) %>
-<% end %>
+<section class="content">
+  <%= button_to "Create a new list", new_list_path, method: :get, class: ['button-link'] %>
+  <div class="list-index">
+    <% @lists.each do |list| %>
+      <div class="list-index-list">
+        <h3><%= list.title %></h3>
+        <p>Subject: <%= list.subject %></p>
+        <p>Topic 1: <%= list.topic1 %></p>
+        <p>Topic 2: <%= list.topic2 %></p>
+        <%= link_to "Show this list", list_path(list.id) %> | <%= link_to "Quiz this list", new_quiz_path(list.id) %>
+      </div>
+    <% end %>
+  </div>
+</section>

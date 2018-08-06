@@ -13,6 +13,7 @@
  *= require reset-minified
  *= require global
  *= require home
+ *= require lists
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');

@@ -1,13 +1,24 @@
-<% @gon.more_fields = more_fields(f) %>
-<%= f.input :title %>
-<%= f.input :subject %>
-<%= f.input :topic1 %>
-<%= f.input :topic2 %>
-<div id="links">
-  <%= f.fields_for :links do |links_form| %>
-    <%= links_form.input :word1 %>
-    <%= links_form.input :word2 %>
-  <% end %>
-  <%= link_to("Add more fields", "#", id: "add_fields") %>
+<div class="list-form">
+  <% @gon.more_fields = more_fields(f) %>
+  <%= f.input :title %>
+  <%= f.input :subject %>
+  <div class="topic-labels">
+    <label>Topic 1</label>
+    <label>Topic 2</label>
+  </div>
+  <div class="list-topics">
+    <%= f.input :topic1, label: false %>
+    <%= f.input :topic2, label: false %>
+  </div>
+  <div class="links">
+    <div class="link-labels">
+      <label>Word</label>
+      <label>Translation</label>
+    </div>
+    <%= f.fields_for :links, class: :hi do |links_form| %>
+      <%= render("link_fields", f: links_form) %>
+    <% end %>
+    <%= link_to("Add more fields", "#", id: "add_fields") %>
+  </div>
+  <%= f.button :submit %>
 </div>
-<%= f.button :submit %>
