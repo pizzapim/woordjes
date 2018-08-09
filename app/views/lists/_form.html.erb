@@ -1,24 +1,25 @@
 <div class="list-form">
   <% @gon.more_fields = more_fields(f) %>
-  <%= f.input :title %>
-  <%= f.input :subject %>
-  <div class="topic-labels">
-    <label>Topic 1</label>
-    <label>Topic 2</label>
+  <%= f.input :title, label_html: {class: 'center-text'}, input_html: {class: 'center-object'} %>
+  <%= f.input :subject, label_html: {class: 'center-text'}, input_html: {class: 'center-object'} %>
+  <div class="topic-labels flex-container">
+    <label class="center-text flex-child">Topic 1</label>
+    <label class="center-text flex-child">Topic 2</label>
   </div>
-  <div class="list-topics">
+  <div class="list-topics flex-container">
     <%= f.input :topic1, label: false %>
     <%= f.input :topic2, label: false %>
   </div>
   <div class="links">
-    <div class="link-labels">
-      <label>Word</label>
-      <label>Translation</label>
+    <h1 class="center-text">Words</h1>
+    <div class="link-labels flex-container">
+      <label class="center-text flex-child">Word</label>
+      <label class="center-text flex-child">Translation</label>
     </div>
     <%= f.fields_for :links, class: :hi do |links_form| %>
       <%= render("link_fields", f: links_form) %>
     <% end %>
-    <%= link_to("Add more fields", "#", id: "add_fields") %>
+    <%= link_to("Add more fields", "#", id: "add_fields", class: 'center-text') %>
   </div>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: 'center-object' %>
 </div>

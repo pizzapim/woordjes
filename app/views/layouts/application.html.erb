@@ -29,8 +29,12 @@
         </ul>
       </nav>
     </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+      <p class="notice" class="center-text"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert" class="center-text"><%= alert %></p>
+    <% end %>
     <main>
       <%= yield %>
     </main>

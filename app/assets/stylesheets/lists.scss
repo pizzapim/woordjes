@@ -1,0 +1,56 @@
+div.list-index h3 {
+  text-decoration: underline;
+  font-size: 18px;
+  padding-bottom: 10px;
+  color: #111;
+}
+
+div.list-index a {
+  background-color: #BABABA;
+  box-shadow: 0px 0px 12px 6px #DCDCDC inset;
+  color: #111;
+}
+
+.list-form .links div input, .list-form .list-topics div input {
+  margin: 5px auto;
+  display: block;
+  width: 80%;
+}
+
+.list-form a {
+  font-size: 16px;
+  line-height: 34px;
+}
+
+.list-form span.error {
+  background-color: rgba(255,0,0,0.3);
+  border-radius: 10px;
+}
+
+.list-form label {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+h1.list-create {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.list-title {
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.list-properties {
+  background-color: #DCDCDC;
+  margin: 15px 10px 0 10px;
+  padding: 10px;
+  border-radius: 10px;
+}

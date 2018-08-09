@@ -1,8 +1,8 @@
 <section class="content">
-  <%= button_to "Create a new list", new_list_path, method: :get, class: ['button-link'] %>
+  <%= button_to "Create a new list", new_list_path, method: :get, class: ['center-object'] %>
   <div class="list-index">
     <% @lists.each do |list| %>
-      <div class="list-index-list">
+      <div class="card">
         <h3><%= list.title %></h3>
         <p>Subject: <%= list.subject %></p>
         <p>Topic 1: <%= list.topic1 %></p>
