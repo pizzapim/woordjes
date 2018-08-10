@@ -1,13 +1,14 @@
 <section class="content">
-  <%= button_to "Create a new list", new_list_path, method: :get, class: ['center-object'] %>
+  <%= button_to "Create a new list", new_list_path, method: :get, class: 'center-object navigation-button' %>
   <div class="list-index">
     <% @lists.each do |list| %>
       <div class="card">
-        <h3><%= list.title %></h3>
-        <p>Subject: <%= list.subject %></p>
-        <p>Topic 1: <%= list.topic1 %></p>
-        <p>Topic 2: <%= list.topic2 %></p>
-        <%= link_to "Show this list", list_path(list.id) %> | <%= link_to "Quiz this list", new_quiz_path(list.id) %>
+        <h3 class="center-text"><%= list.title %></h3>
+        <p class="center-text">Subject: <%= list.subject %></p>
+        <p class="center-text">Topic 1: <%= list.topic1 %></p>
+        <p class="center-text">Topic 2: <%= list.topic2 %></p>
+        <%= button_to("Show this list", list_path(list.id), class: 'center-object', method: :get) %>
+        <%= button_to("Quiz this list", new_quiz_path(list.id), class: 'center-object', method: :get) %>
       </div>
     <% end %>
   </div>

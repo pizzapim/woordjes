@@ -1,17 +1,24 @@
-<%= link_to("Return to list", list_path(@list.id)) %>
-<h3>Quiz result for <i><%= @list.title %></i> finished at <%= @quiz_result.created_at.strftime("%d-%m-%Y %H:%M") %></h3>
-Quiz type: <%= @quiz_result.quiz_type %><br>
-Direction: <%= @quiz_result.direction %><br>
-Percentage correctly answered: <%= ((@quiz_result.correct.to_f / (@quiz_result.correct + @quiz_result.quiz_errors.count)) * 100).to_i %>%<br>
-Errors:<br>
-<% @quiz_result.quiz_errors.each.with_index do |quiz_error, i| %>
-  <h3>Error number <%= i %></h3>
-  <% if @quiz_result.direction == "normal" %>
-    Word: <%= quiz_error.word1 %><br>
-    Correct answer: <%= quiz_error.word2 %><br>
-  <% else %>
-    Word: <%= quiz_error.word2 %><br>
-    Correct answer: <%= quiz_error.word1 %><br>
-  <% end %>
-  You answered: <%= quiz_error.answer %>
-<% end %>
+<section class="content">
+  <%= button_to("Return to list", list_path(@list.id), method: :get, class: 'center-object navigation-button') %>
+  <div class="card">
+    <h3 class="center-text">Quiz result for <i><%= @list.title %></i></h3>
+    <p class="center-text">finished at <%= @quiz_result.created_at.strftime("%d-%m-%Y %H:%M") %></p>
+    <p class="center-text">Quiz type: <%= @quiz_result.quiz_type %></p>
+    <p class="center-text">Direction: <%= @quiz_result.direction %></p>
+    <p class="center-text"><%= ((@quiz_result.correct.to_f / (@quiz_result.correct + @quiz_result.quiz_errors.count)) * 100).to_i %>% correct</p>
+    <h2 class="center-text">Errors:</h2>
+    <% @quiz_result.quiz_errors.each.with_index do |quiz_error, i| %>
+      <div class="card2">
+        <h3 class="center-text">Error number <%= i+1 %></h3>
+        <% if @quiz_result.direction == "normal" %>
+          <p class="center-text">Word: <%= quiz_error.word1 %></p>
+          <p class="center-text">Correct answer: <%= quiz_error.word2 %></p>
+        <% else %>
+          <p class="center-text">Word: <%= quiz_error.word2 %></p>
+          <p class="center-text">Correct answer: <%= quiz_error.word1 %></p>
+        <% end %>
+        <p class="center-text">You answered: <%= quiz_error.answer %></p>
+      </div>
+    <% end %>
+  </div>
+</section>

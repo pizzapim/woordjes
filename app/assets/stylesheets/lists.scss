@@ -1,14 +1,25 @@
-div.list-index h3 {
+input.navigation-button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+list-index h3 {
   text-decoration: underline;
   font-size: 18px;
   padding-bottom: 10px;
-  color: #111;
+  color: var(--secondary-color);
 }
 
-div.list-index a {
-  background-color: #BABABA;
-  box-shadow: 0px 0px 12px 6px #DCDCDC inset;
-  color: #111;
+list-index a {
+  color: var(--secondary-color);
+}
+
+.list-index input {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  margin-top: 12px;
 }
 
 .list-form .links div input, .list-form .list-topics div input {
