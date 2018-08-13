@@ -1,6 +1,8 @@
 <section class="content">
-  <h1 class="list-create center-text">Create a new list</h1>
-  <%= simple_form_for(@list, url: lists_path, method: :post) do |f| %>
-    <%= render :partial => 'form', :locals=>{:f => f} %>
-  <% end %>
+  <div class="card">
+    <h1 class="center-text">Create a new list</h1>
+    <%= simple_form_for(@list, url: lists_path, method: :post) do |f| %>
+      <%= render :partial => 'form', :locals=>{:f => f} %>
+    <% end %>
+  </div>
 </section>

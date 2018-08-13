@@ -15,8 +15,8 @@
       </div>
     <% end %>
   </div>
-  <div class="card">
-    <h3 class="center-text">Quiz Results:</h3>
+  <div class="card quiz-result">
+    <h3 class="center-text"><%= if @list.quiz_results.any?; "Quiz Results:"; else; "No quiz results recorded yet!"; end %></h3>
     <% @list.quiz_results.order("created_at DESC").each do |quiz_result| %>
       <div class="card2">
         <p class="center-text"><b><%= quiz_result.created_at.strftime("%d-%m-%Y %H:%M") %></b></p>

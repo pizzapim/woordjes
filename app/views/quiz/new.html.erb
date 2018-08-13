@@ -1,8 +1,12 @@
-<%= link_to "Return to lists", lists_path %><br>
-<%= flash[:errors] %>
-<h3>Start a quiz for <i><%= @list.title %></i></h3>
-<%= simple_form_for(:quiz, url: start_quiz_path(@list.id), method: :post) do |f| %>
-  <%= f.input :quiz_type, collection: quiz_types, selected: nil %>
-  <%= f.input :direction, collection: [["#{@list.topic1} -> #{@list.topic2}", "normal"], ["#{@list.topic2} -> #{@list.topic1}", "reversed"]], selected: nil %>
-  <%= f.button :submit, "Start the quiz" %>
-<% end %>
+<section class="content">
+  <%= button_to "Return to lists", lists_path, class: 'center-object navigation-button', method: :get %>
+  <%= flash[:errors] %>
+  <div class="card">
+    <h3 class="center-text">Start a quiz for <i><%= @list.title %></i></h3>
+    <%= simple_form_for(:quiz, url: start_quiz_path(@list.id), method: :post) do |f| %>
+      <%= f.input :quiz_type, collection: quiz_types, selected: nil %>
+      <%= f.input :direction, collection: [["#{@list.topic1} -> #{@list.topic2}", "normal"], ["#{@list.topic2} -> #{@list.topic1}", "reversed"]], selected: nil %>
+      <%= f.button :submit, "Start the quiz", class: 'center-object' %>
+    <% end %>
+  </div>
+</section>

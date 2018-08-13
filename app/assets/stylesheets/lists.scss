@@ -5,6 +5,11 @@ input.navigation-button {
   margin-top: 15px;
 }
 
+body.lists-edit h1, body.lists-new h1 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
 list-index h3 {
   text-decoration: underline;
   font-size: 18px;
@@ -22,20 +27,36 @@ list-index a {
   margin-top: 12px;
 }
 
+.list-form input[type=text]{
+  border: none;
+}
+
 .list-form .links div input, .list-form .list-topics div input {
   margin: 5px auto;
   display: block;
   width: 80%;
 }
 
+.links {
+  margin-top: 15px;
+}
+
 .list-form a {
   font-size: 16px;
   line-height: 34px;
+  color: var(--secondary-color);
+}
+
+.list-form input[type=submit] {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 .list-form span.error {
-  background-color: rgba(255,0,0,0.3);
-  border-radius: 10px;
+  background-color: var(--alert-color);
+  line-height: 25px;
+  width: 80%;
+  margin: 5px auto;
 }
 
 .list-form label {
@@ -44,11 +65,9 @@ list-index a {
   line-height: 25px;
 }
 
-h1.list-create {
-  font-size: 20px;
-  margin-bottom: 10px;
+.list-form .links h1 {
+  font-size: 18px;
 }
-
 .list-title {
   font-size: 20px;
   line-height: 40px;

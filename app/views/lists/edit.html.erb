@@ -1,3 +1,8 @@
-<%= simple_form_for(@list, url: list_path, method: :patch) do |f| %>
-  <%= render :partial => 'form', :locals=>{:f => f} %>
-<% end %>
+<section class="content">
+  <div class="card">
+    <h1 class="center-text">Editing list</h1>
+    <%= simple_form_for(@list, url: list_path, method: :patch) do |f| %>
+      <%= render :partial => 'form', :locals=>{:f => f} %>
+    <% end %>
+  </div>
+</section>
