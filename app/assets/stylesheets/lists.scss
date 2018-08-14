@@ -10,7 +10,11 @@ body.lists-edit h1, body.lists-new h1 {
   margin-bottom: 5px;
 }
 
-list-index h3 {
+.list-index h3 {
+  color: var(--secondary-color);
+}
+
+list-index div.card h3 {
   text-decoration: underline;
   font-size: 18px;
   padding-bottom: 10px;

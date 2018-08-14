@@ -1,6 +1,9 @@
 <section class="content">
   <%= button_to "Create a new list", new_list_path, method: :get, class: 'center-object navigation-button' %>
   <div class="list-index">
+    <% if !@lists.any? %>
+      <h3 class="center-text">Create a list to get started!</h3>
+    <% end %>
     <% @lists.each do |list| %>
       <div class="card">
         <h3 class="center-text"><%= list.title %></h3>
