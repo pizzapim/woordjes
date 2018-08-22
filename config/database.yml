@@ -21,6 +21,12 @@ test:
   username: postgres
   password: root
 
-#production:
-#  <<: *default
-#  database: db/production.sqlite3
+production:
+  <<: *default
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  database: woordjespi
+  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  username: <%= ENV['WOORDJES_DATABASE_USER'] %>
+  password: <%= ENV['WOORDJES_DATABASE_PASSWORD'] %>
