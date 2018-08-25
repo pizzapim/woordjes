@@ -30,6 +30,7 @@ function normalQuizInit() {
   });
   $("#display-question").html(word(0, 1));
   $("#answer-input").val("");
+  $("#answer-input").focus();
 }
 
 function normalQuizCheck() {
@@ -82,6 +83,7 @@ function normalQuizCheck() {
     $("#answer-feedback").hide();
     $("#display-question").html(word(currentQuestion, 1));
     $("#check-answer").val("Check answer");
+    $("#answer-input").focus();
     state = "awaitingInput";
   }
 }
