@@ -1,4 +1,4 @@
 <div class="list-link flex-container">
-  <%= f.input :word1, label: false, wrapper_html: {class: 'flex-child'}, error_html: {class: 'center-text'}, input_html: {placeholder: 'Word', autocomplete: 'off'} %>
-  <%= f.input :word2, label: false, wrapper_html: {class: 'flex-child'}, error_html: {class: 'center-text'}, input_html: {placeholder: 'Translation', autocomplete: 'off'} %>
+  <%= f.input :word1, label: false, wrapper_html: {class: 'flex-child'}, error_html: {class: 'center-text'}, input_html: {placeholder: 'Word', autocomplete: 'off', tabindex: (local_assigns[:tabindex] ? tabindex : "replace_me")} %>
+  <%= f.input :word2, label: false, wrapper_html: {class: 'flex-child'}, error_html: {class: 'center-text'}, input_html: {placeholder: 'Translation', autocomplete: 'off', tabindex: (local_assigns[:tabindex] ? tabindex+1 : "replace_me")} %>
 </div>
