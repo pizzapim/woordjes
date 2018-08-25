@@ -57,7 +57,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use devise for user authentication
 gem 'devise', '~> 4.4.3'
@@ -70,3 +70,6 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
 # Use gon to parse ruby vars to js.
 gem 'gon', '~> 6.2', '>= 6.2.1'
+
+# To detect locale
+gem 'http_accept_language', '~> 2.1', '>= 2.1.1'

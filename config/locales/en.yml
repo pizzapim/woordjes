@@ -1,33 +1,23 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  simple_form:
+    labels:
+      user:
+        password: Password
+        password_again: Password (again)
+        email: Email
+  devise:
+    sessions:
+      user: Signed in successfully.
+  home:
+    banner_title: Learn words - The easy way
+    banner_subtitle: Create your own word lists and quiz them. For free, forever.
+  lists:
+    create_new_list: Create a new list
+    no_lists_yet: Create a list to get started!
+  signup_partial_title: Sign up for free!
+  signup_verb: Sign up
+  signup_noun: Signup
+  login_verb: Log in
+  login_noun: Login
+  logout: Logout
+  navigation_my_lists: My lists

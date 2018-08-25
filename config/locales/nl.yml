@@ -1,0 +1,24 @@
+nl:
+  simple_form:
+    labels:
+      user:
+        password: Wachtwoord
+        password_again: Wachtwoord (nogmaals)
+        email: Email
+  devise:
+    sessions:
+      user:
+        signed_in: Je bent nu ingelogd.
+  home:
+    banner_title: Makkelijk woordjes leren
+    banner_subtitle: Maak je eigen woordenlijst en oefen! Gratis, voor altijd.
+  lists:
+    create_new_list: Nieuwe lijst maken
+    no_lists_yet: Maak een lijst om te beginnen!
+  signup_partial_title: Meld je gratis aan!
+  signup_verb: Aanmelden
+  signup_noun: Aanmelden
+  login_verb: Inloggen
+  login_noun: Inloggen
+  logout: Uitloggen
+  navigation_my_lists: Mijn lijsten

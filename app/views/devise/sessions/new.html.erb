@@ -1,15 +1,15 @@
 <section class="content">
   <div class="devise-form">
-    <h2 class="form-title">Log in</h2>
+    <h2 class="form-title"><%= t :login_verb %></h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.label :email %>
+        <%= f.label :email, t('simple_form.labels.user.email') %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
 
       <div class="field">
-        <%= f.label :password %>
+        <%= f.label :password, t('simple_form.labels.user.password') %>
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
@@ -21,7 +21,7 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit t(:login_verb) %>
       </div>
     <% end %>
   </div>
