@@ -1,7 +1,7 @@
 <div class="list-form">
   <%
     @gon.more_fields = more_fields(f)
-    @tabindex = 0
+    @tabindex = 1
   %>
   <%= f.input :title, label_html: {class: 'center-text'}, input_html: {class: 'center-object', placeholder: 'E.g. English page 8-12', autocomplete: 'off', tabindex: (@tabindex+=1)-1}, error_html: {class: 'center-text'} %>
   <%= f.input :subject, label_html: {class: 'center-text'}, input_html: {class: 'center-object', placeholder: 'E.g. English', autocomplete: 'off', tabindex: (@tabindex+=1)-1}, error_html: {class: 'center-text'} %>
