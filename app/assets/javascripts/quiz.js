@@ -41,16 +41,16 @@ function normalQuizCheck() {
       $("#answer-feedback").html("Correct!");
       correct++;
     } else {
-      $("#answer-feedback").html("Incorrect. The correct answer is: " + word(currentQuestion, 2));
+      $("#answer-feedback").html(parsed.t.incorrect_message + word(currentQuestion, 2));
       quizQuestions.splice(currentQuestion + 2 + Math.floor(Math.random() * 3), 0, quizQuestions[currentQuestion]);
       quiz_errors.push({word1: word(currentQuestion, 1), word2: word(currentQuestion, 2), answer: answer});
     }
     $("#answer-input").val("");
     currentQuestion++;
     if (currentQuestion == quizQuestions.length) {
-      $("#check-answer").val("View result");
+      $("#check-answer").val(parsed.t.view_result);
     } else {
-      $("#check-answer").val("Next word");
+      $("#check-answer").val(parsed.t.next_word);
     }
     state = "viewingAnswer";
   } else {
@@ -76,12 +76,12 @@ function normalQuizCheck() {
           }
         },
         dataType: "json"
-      }).fail(function(){alert("And error occurred while submitting ");});
+      }).fail(function(){alert("And error occurred while submitting");});
     }
     $("#answer-input").show();
     $("#answer-feedback").hide();
     $("#display-question").html(word(currentQuestion, 1));
-    $("#check-answer").val("Check answer");
+    $("#check-answer").val(parsed.t.check_answer);
     state = "awaitingInput";
   }
 }

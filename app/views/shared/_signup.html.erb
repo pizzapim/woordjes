@@ -5,17 +5,17 @@
     <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :email, t('simple_form.labels.user.email') %>
+      <%= f.label :email %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
     <div class="field">
-      <%= f.label :password, t('simple_form.labels.user.password') %>
+      <%= f.label :password %>
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
 
     <div class="field">
-      <%= f.label :password, t('simple_form.labels.user.password_again') %>
+      <%= f.label :password %>
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 

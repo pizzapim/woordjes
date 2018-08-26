@@ -11,6 +11,10 @@ module ApplicationHelper
     ["normal"]
   end
 
+  def quiz_types_collection
+    quiz_types.map{|type| [t("quiz_types.#{type}"), type]}
+  end
+
   def resource
     @new_user || User.new
   end
