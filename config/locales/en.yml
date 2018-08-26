@@ -31,7 +31,33 @@ en:
         link:
           word1: Word
           word2: Translation
+      errors:
+        models:
+          list:
+            attributes:
+              links:
+                blank: At least one pair is required.
+          user:
+            attributes:
+              email:
+                taken: This email address is already in use!
+              password_confirmation:
+                confirmation: Enter your password a second time.
+        messages:
+          blank: Fill this in.
+          too_short: Too short.
+          too_long: Too long.
+          required_too: Fill this in too.
+  errors:
+    messages:
+      not_saved:
+        one: "Because of this error, this %{resource} couldn't be saved:"
+        other: "Because of these %{count} errors, this %{resource} couldn't be saved:"
   devise:
+    failure:
+      user:
+        invalid: Incorrect email or password.
+        not_found_in_database: Incorrect email or password.
     sessions:
       user:
         signed_in: You are now logged in.

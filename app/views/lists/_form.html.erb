@@ -12,6 +12,7 @@
   </div>
   <div class="links">
     <h1 class="center-text"><%= @list.ta :links, 2 %></h1>
+    <%= f.error :links, class: 'center-text' %>
     <div class="link-labels flex-container">
       <label class="center-text flex-child"><%= @list.taa :links, :word1 %></label>
       <label class="center-text flex-child"><%= @list.taa :links, :word2 %></label>

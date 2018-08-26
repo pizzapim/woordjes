@@ -31,7 +31,33 @@ nl:
       link:
         word1: Woord
         word2: Vertaling
+    errors:
+      models:
+        list:
+          attributes:
+            links:
+              blank: Vul ten minste één woordpaar in!
+        user:
+          attributes:
+            email:
+              taken: Dit email-adres is al in gebruik.
+            password_confirmation:
+              confirmation: Vul je wachtwoord nogmaals in.
+      messages:
+        blank: Vul dit in.
+        too_short: Te kort.
+        too_long: Te lang.
+        required_too: Vul dit ook in.
+  errors:
+    messages:
+      not_saved:
+        one: 'Door deze error kon deze %{resource} niet worden opgeslagen:'
+        other: 'Door deze %{count} errors kon deze %{resource} niet worden opgeslagen:'
   devise:
+    failure:
+      user:
+        invalid: Verkeerd email of wachtwoord.
+        not_found_in_database: Email of wachtwoord is verkeerd.
     sessions:
       user:
         signed_in: Je bent nu ingelogd.
