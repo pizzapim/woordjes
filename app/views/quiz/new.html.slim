@@ -1,0 +1,10 @@
+section.content
+  = button_to t('lists.show.return_to_lists_index'), lists_path, class: 'center-object navigation-button', method: :get
+  = flash[:errors]
+  .card
+    h.center-text = t('.start_quiz_header_html')%{list_title: @list.title}
+    = simple_form_for(:quiz, url: start_quiz_path(@list.id), method: :post) do |f|
+      = f.input :quiz_type, label: t('activerecord.attributes.quiz_result.quiz_type'), collection: quiz_types_collection, selected: nil
+      / Probably want to make this a bit cleaner and move it to a helper.
+      = f.input :direction, label: t('activerecord.attributes.quiz_result.direction'), collection: [["#{@list.topic1} -> #{@list.topic2}", "normal"], ["#{@list.topic2} -> #{@list.topic1}", "reversed"]], selected: nil
+      = f.button :submit, t('.start_quiz_button'), class: 'center-object'

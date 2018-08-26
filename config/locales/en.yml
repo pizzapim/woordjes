@@ -105,6 +105,8 @@ en:
     new:
       more_fields: More words
       create_list_title: Create a new list
+    edit:
+      editing_list_header: Editing list
   quiz_results:
     show:
       return_to_list: Return to list

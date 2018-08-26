@@ -105,6 +105,8 @@ nl:
     new:
       more_fields: Meer woorden
       create_list_title: Nieuwe woordenlijst maken
+    edit:
+      editing_list_header: Lijst bewerken
   quiz_results:
     show:
       return_to_list: Terug naar lijst

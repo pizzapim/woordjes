@@ -1,0 +1,21 @@
+div.list-form
+  - @gon.more_fields = more_fields(f)
+  - @tabindex = 1
+  = f.input :title, label_html: {class: 'center-text'}, input_html: {class: 'center-object', autocomplete: 'off', tabindex: (@tabindex+=1)-1}, error_html: {class: 'center-text'}
+  = f.input :subject, label_html: {class: 'center-text'}, input_html: {class: 'center-object', autocomplete: 'off', tabindex: (@tabindex+=1)-1}, error_html: {class: 'center-text'}
+  .topic-labels.flex-container
+    = f.label :topic1, class: 'center-text flex-child'
+    = f.label :topic2, class: 'center-text flex-child'
+  .list-topics.flex-container
+    = f.input :topic1, label: false, wrapper_html: {class: 'flex-child'}, error_html: {class: 'center-text'}, input_html: {autocomplete: 'off', tabindex: (@tabindex+=1)-1}
+    = f.input :topic2, label: false, wrapper_html: {class: 'flex-child'}, error_html: {class: 'center-text'}, input_html: {autocomplete: 'off', tabindex: (@tabindex+=1)-1}
+  .links
+    h1.center-text = @list.ta :links, 2
+    = f.error :links, class: 'center-text'
+    .link-labels.flex-container
+      label.center-text.flex-child = @list.taa :links, :word1
+      label.center-text.flex-child = @list.taa :links, :word2
+    = f.fields_for :links, class: :hi do |links_form|
+      = render("link_fields", f: links_form, tabindex: (@tabindex+=2)-2)
+    = link_to(t('lists.new.more_fields'), "#", id: "add_fields", class: 'center-text')
+  = f.button :submit, class: 'center-object'

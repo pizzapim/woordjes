@@ -74,3 +74,6 @@ gem 'gon', '~> 6.2', '>= 6.2.1'
 
 # To detect locale
 gem 'http_accept_language', '~> 2.1', '>= 2.1.1'
+
+# Use slim for (con)templating
+gem 'slim-rails', '~> 3.1', '>= 3.1.3'

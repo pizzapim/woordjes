@@ -1,8 +1,0 @@
-<section class="content">
-  <div class="card">
-    <h3 class="center-text"><%= (t '.quiz_for_header_html')%{list_title: @list.title} %></h3>
-    <div id="quiz-container">
-      <%= render :partial => "quiz/quiz_containers/" + params[:quiz][:quiz_type], locals: {quiz_type: params[:quiz][:quiz_type]} %>
-    </div>
-  </div>
-</section>

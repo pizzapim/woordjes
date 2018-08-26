@@ -1,0 +1,5 @@
+section.content
+  .card
+    h1.center-text = t '.editing_list_header'
+    = simple_form_for(@list, url: list_path, method: :patch) do |f|
+      = render :partial => 'form', :locals=>{:f => f}

@@ -1,0 +1,5 @@
+section.content
+  .card
+    h1.center-text = t '.create_list_title'
+    = simple_form_for(@list, url: lists_path, method: :post) do |f|
+      = render :partial => 'form', :locals=>{:f => f}
