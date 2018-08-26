@@ -1,19 +1,75 @@
 en:
-  simple_form:
-    labels:
-      user:
-        password: Password
-        password_again: Password (again)
-        email: Email
+  activerecord:
+    models:
+      user: User
+      list: List
+      link:
+        one: Word
+        other: Words
+      quiz_result:
+        one: Result
+        other: Results
+      quiz_error:
+        one: Mistake
+        other: Mistakes
+      attributes:
+        user:
+          password: Password
+          password_confirmation: Password(again)
+        list:
+          subject: Subject
+          topic1: Topic 1
+          topic2: Topic 2
+        quiz_result:
+          quiz_type: Quiz method
+          direction: Direction
+        quiz_error:
+          answer: Your answer
+          word1: Word
+          word2: Correct answer
   devise:
     sessions:
-      user: Signed in successfully.
+      user:
+        signed_in: You are now logged in.
+        signed_out: You are now logged out.
+  time:
+    formats:
+      quiz_result_finished: "%d-%m-%Y %H:%M"
+  quiz_types:
+    normal: normal
+  quizzes:
+    normal:
+      check answer: Check answer
+      next_word: Next
+      incorrect_message: "Wrong. The correct answer is: "
+      view_result: Show result
   home:
-    banner_title: Learn words - The easy way
-    banner_subtitle: Create your own word lists and quiz them. For free, forever.
+    index:
+      banner_title: Learn words - The easy way
+      banner_subtitle: Create your own word lists and practice them. For free, forever.
   lists:
-    create_new_list: Create a new list
-    no_lists_yet: Create a list to get started!
+    index:
+      create_new_list: Create a new list
+      no_lists_yet: Create a list to get started!
+      show_this_list: Show list
+      quiz_this_list: Practice list
+    show:
+      return_to_lists_index: Return to my lists
+      edit_list: Edit list
+      show_quiz_result: Show result
+      delete_list: Delete list
+  quiz_results:
+    show:
+      return_to_list: Return to list
+      for_html: Result for <i>%{list_title}</i>
+      finished_at: Finished at %{time}
+      error_number: Mistake number %{number}
+  quiz:
+    new:
+      start_quiz_header_html: Start new quiz for <i>%{list_title}</i>
+      start_quiz_button: Start practicing
+    quiz:
+      quiz_for_header_html: Practicing <i>%{list_title}</i>
   signup_partial_title: Sign up for free!
   signup_verb: Sign up
   signup_noun: Signup

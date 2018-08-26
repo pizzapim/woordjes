@@ -41,7 +41,7 @@ nl:
     normal:
       check_answer: Controleer
       next_word: Volgende
-      incorrect_message: "Fout. Het correct antwoord is:"
+      incorrect_message: "Fout. Het correct antwoord is: "
       view_result: Bekijk resultaat
   home:
     index:
