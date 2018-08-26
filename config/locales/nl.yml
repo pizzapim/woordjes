@@ -17,6 +17,7 @@ nl:
         password: Wachtwoord
         password_confirmation: Wachtwoord(nogmaals)
       list:
+        title: Titel
         subject: Vak
         topic1: Onderwerp 1
         topic2: Onderwerp 2
@@ -27,11 +28,28 @@ nl:
         answer: Jouw antwoord
         word1: Woord
         word2: Goede antwoord
+      link:
+        word1: Woord
+        word2: Vertaling
   devise:
     sessions:
       user:
         signed_in: Je bent nu ingelogd.
         signed_out: Je bent uitgelogd.
+  helpers:
+    submit:
+      list:
+        create: "%{model} opslaan"
+  simple_form:
+    placeholders:
+      list:
+        title: 'Engels blz. 8-13'
+        subject: Engels Cambridge
+        topic1: Nederlands
+        topic2: Engels
+      link:
+        word1: Woord
+        word2: Vertaling
   time:
     formats:
       quiz_result_finished: "%d-%m-%Y %H:%M"
@@ -58,6 +76,9 @@ nl:
       edit_list: Lijst bewerken
       show_quiz_result: Resultaat bekijken
       delete_list: Lijst verwijderen
+    new:
+      more_fields: Meer woorden
+      create_list_title: Nieuwe woordenlijst maken
   quiz_results:
     show:
       return_to_list: Terug naar lijst

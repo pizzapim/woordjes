@@ -17,6 +17,7 @@ en:
           password: Password
           password_confirmation: Password(again)
         list:
+          title: Title
           subject: Subject
           topic1: Topic 1
           topic2: Topic 2
@@ -27,11 +28,28 @@ en:
           answer: Your answer
           word1: Word
           word2: Correct answer
+        link:
+          word1: Word
+          word2: Translation
   devise:
     sessions:
       user:
         signed_in: You are now logged in.
         signed_out: You are now logged out.
+  helpers:
+    submit:
+      list:
+        create: "Create %{model}"
+  simple_form:
+    placeholders:
+      list:
+        title: 'Spanish pages 8-13'
+        subject: Spanish
+        topic1: English
+        topic2: Spanish
+      link:
+        word1: Word
+        word2: Translation
   time:
     formats:
       quiz_result_finished: "%d-%m-%Y %H:%M"
@@ -58,6 +76,9 @@ en:
       edit_list: Edit list
       show_quiz_result: Show result
       delete_list: Delete list
+    new:
+      more_fields: More words
+      create_list_title: Create a new list
   quiz_results:
     show:
       return_to_list: Return to list
