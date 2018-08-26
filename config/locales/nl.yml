@@ -1,0 +1,126 @@
+nl:
+  activerecord:
+    models:
+      user: Gebruiker
+      list: Lijst
+      link:
+        one: Woord
+        other: Woorden
+      quiz_result:
+        one: Resultaat
+        other: Resultaten
+      quiz_error:
+        one: Fout
+        other: Fouten
+    attributes:
+      user:
+        password: Wachtwoord
+        password_confirmation: Wachtwoord(nogmaals)
+      list:
+        title: Titel
+        subject: Vak
+        topic1: Onderwerp 1
+        topic2: Onderwerp 2
+      quiz_result:
+        quiz_type: Overhoor methode
+        direction: Richting
+      quiz_error:
+        answer: Jouw antwoord
+        word1: Woord
+        word2: Goede antwoord
+      link:
+        word1: Woord
+        word2: Vertaling
+    errors:
+      models:
+        list:
+          attributes:
+            links:
+              blank: Vul ten minste één woordpaar in!
+        user:
+          attributes:
+            email:
+              taken: Dit email-adres is al in gebruik.
+            password_confirmation:
+              confirmation: Vul je wachtwoord nogmaals in.
+      messages:
+        blank: Vul dit in.
+        too_short: Te kort.
+        too_long: Te lang.
+        required_too: Vul dit ook in.
+  errors:
+    messages:
+      not_saved:
+        one: 'Door deze error kon deze %{resource} niet worden opgeslagen:'
+        other: 'Door deze %{count} errors kon deze %{resource} niet worden opgeslagen:'
+  devise:
+    failure:
+      user:
+        invalid: Verkeerd email of wachtwoord.
+        not_found_in_database: Email of wachtwoord is verkeerd.
+    sessions:
+      user:
+        signed_in: Je bent nu ingelogd.
+        signed_out: Je bent uitgelogd.
+  helpers:
+    submit:
+      list:
+        create: "%{model} opslaan"
+  simple_form:
+    placeholders:
+      list:
+        title: 'Engels blz. 8-13'
+        subject: Engels Cambridge
+        topic1: Nederlands
+        topic2: Engels
+      link:
+        word1: Woord
+        word2: Vertaling
+  time:
+    formats:
+      quiz_result_finished: "%d-%m-%Y %H:%M"
+  quiz_types:
+    normal: normaal
+  quizzes:
+    normal:
+      check_answer: Controleer
+      next_word: Volgende
+      incorrect_message: "Fout. Het correct antwoord is: "
+      view_result: Bekijk resultaat
+  home:
+    index:
+      banner_title: Makkelijk woordjes leren
+      banner_subtitle: Maak je eigen woordenlijst en oefen! Gratis, voor altijd.
+  lists:
+    index:
+      create_new_list: Nieuwe lijst maken
+      no_lists_yet: Maak een lijst om te beginnen!
+      show_this_list: Lijst bekijken
+      quiz_this_list: Lijst oefenen
+    show:
+      return_to_lists_index: Terug naar mijn lijsten
+      edit_list: Lijst bewerken
+      show_quiz_result: Resultaat bekijken
+      delete_list: Lijst verwijderen
+    new:
+      more_fields: Meer woorden
+      create_list_title: Nieuwe woordenlijst maken
+  quiz_results:
+    show:
+      return_to_list: Terug naar lijst
+      for_html: Resultaat voor <i>%{list_title}</i>
+      finished_at: Behaald op %{time}
+      error_number: Fout nummer %{number}
+  quiz:
+    new:
+      start_quiz_header_html: Nieuwe overhoring voor <i>%{list_title}</i>
+      start_quiz_button: Begin de overhoring
+    quiz:
+      quiz_for_header_html: Overhoring voor <i>%{list_title}</i>
+  signup_partial_title: Meld je gratis aan!
+  signup_verb: Aanmelden
+  signup_noun: Aanmelden
+  login_verb: Inloggen
+  login_noun: Inloggen
+  logout: Uitloggen
+  navigation_my_lists: Mijn lijsten

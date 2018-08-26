@@ -1,13 +1,13 @@
 <section class="content">
-  <%= button_to "Return to my lists", lists_path, class: 'center-object navigation-button', method: :get %>
-  <%= button_to "Quiz this list", new_quiz_path(@list.id), class: 'center-object navigation-button', method: :get %>
-  <%= button_to "Edit this list", edit_list_path(@list), class: 'center-object navigation-button', method: :get %>
+  <%= button_to t('.return_to_lists_index'), lists_path, class: 'center-object navigation-button', method: :get %>
+  <%= button_to t('lists.index.quiz_this_list'), new_quiz_path(@list.id), class: 'center-object navigation-button', method: :get %>
+  <%= button_to t('.edit_list'), edit_list_path(@list), class: 'center-object navigation-button', method: :get %>
   <div class="card">
     <h1 class="list-title center-text"><%= @list.title %></h1>
-    <p class="center-text">Subject: <%= @list.subject %></p>
-    <p class="center-text">Topic 1: <%= @list.topic1 %></p>
-    <p class="center-text">Topic 2: <%= @list.topic2 %></p>
-    <h3 class="center-text">Words:</h3>
+    <p class="center-text"><%= @list.t :subject %>: <%= @list.subject %></p>
+    <p class="center-text"><%= @list.t :topic1 %>: <%= @list.topic1 %></p>
+    <p class="center-text"><%= @list.t :topic2 %>: <%= @list.topic2 %></p>
+    <h3 class="center-text"><%= @list.ta :links, 2 %>:</h3>
     <% @list.links.each do |link| %>
       <div class="flex-container">
         <p class="flex-child center-text"><%= link.word1 %></p>
@@ -16,16 +16,20 @@
     <% end %>
   </div>
   <div class="card quiz-result">
-    <h3 class="center-text"><%= if @list.quiz_results.any?; "Quiz Results:"; else; "No quiz results recorded yet!"; end %></h3>
+    <% if @list.quiz_results.any? %>
+      <h3 class="center-text"><%= @list.ta :quiz_results, 2 %>:</h3>
+    <% else %>
+      <h3 class="center-text">No quiz results recorded yet!</h3>
+    <% end %>
     <% @list.quiz_results.order("created_at DESC").each do |quiz_result| %>
       <div class="card2">
-        <p class="center-text"><b><%= quiz_result.created_at.strftime("%d-%m-%Y %H:%M") %></b></p>
-        <p class="center-text">Quiz type: <%= quiz_result.quiz_type %></p>
-        <p class="center-text">Direction: <%= quiz_result.direction %></p>
+        <p class="center-text"><b><%= l(quiz_result.created_at, format: :quiz_result_finished) %></b></p>
+        <p class="center-text"><%= quiz_result.t :quiz_type %>: <%= quiz_result.quiz_type %></p>
+        <p class="center-text"><%= quiz_result.t :direction %>: <%= quiz_result.direction %></p>
         <p class="center-text"><%= ((quiz_result.correct.to_f / (quiz_result.correct + quiz_result.quiz_errors.count)) * 100).to_i %>% correct</p>
-        <%= link_to("Show quiz result", quiz_result_url(@list.id, quiz_result.id), class: 'center-text') %>
+        <%= link_to(t('.show_quiz_result'), quiz_result_url(@list.id, quiz_result.id), class: 'center-text') %>
       </div>
     <% end %>
   </div>
-  <%= button_to "Delete this list", @list, method: :delete, class: 'center-object navigation-button' %>
+  <%= button_to t('.delete_list'), @list, method: :delete, class: 'center-object navigation-button' %>
 </section>

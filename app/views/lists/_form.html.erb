@@ -3,26 +3,27 @@
     @gon.more_fields = more_fields(f)
     @tabindex = 1
   %>
-  <%= f.input :title, label_html: {class: 'center-text'}, input_html: {class: 'center-object', placeholder: 'E.g. English page 8-12', autocomplete: 'off', tabindex: (@tabindex+=1)-1}, error_html: {class: 'center-text'} %>
-  <%= f.input :subject, label_html: {class: 'center-text'}, input_html: {class: 'center-object', placeholder: 'E.g. English', autocomplete: 'off', tabindex: (@tabindex+=1)-1}, error_html: {class: 'center-text'} %>
+  <%= f.input :title, label_html: {class: 'center-text'}, input_html: {class: 'center-object', autocomplete: 'off', tabindex: (@tabindex+=1)-1}, error_html: {class: 'center-text'} %>
+  <%= f.input :subject, label_html: {class: 'center-text'}, input_html: {class: 'center-object', autocomplete: 'off', tabindex: (@tabindex+=1)-1}, error_html: {class: 'center-text'} %>
   <div class="topic-labels flex-container">
-    <label class="center-text flex-child">Topic 1</label>
-    <label class="center-text flex-child">Topic 2</label>
+    <%= f.label :topic1, class: 'center-text flex-child' %>
+    <%= f.label :topic2, class: 'center-text flex-child' %>
   </div>
   <div class="list-topics flex-container">
-    <%= f.input :topic1, label: false, wrapper_html: {class: 'flex-child'}, error_html: {class: 'center-text'}, input_html: {placeholder: 'E.g. English', autocomplete: 'off', tabindex: (@tabindex+=1)-1} %>
-    <%= f.input :topic2, label: false, wrapper_html: {class: 'flex-child'}, error_html: {class: 'center-text'}, input_html: {placeholder: 'E.g. Spanish', autocomplete: 'off', tabindex: (@tabindex+=1)-1} %>
+    <%= f.input :topic1, label: false, wrapper_html: {class: 'flex-child'}, error_html: {class: 'center-text'}, input_html: {autocomplete: 'off', tabindex: (@tabindex+=1)-1} %>
+    <%= f.input :topic2, label: false, wrapper_html: {class: 'flex-child'}, error_html: {class: 'center-text'}, input_html: {autocomplete: 'off', tabindex: (@tabindex+=1)-1} %>
   </div>
   <div class="links">
-    <h1 class="center-text">Words</h1>
+    <h1 class="center-text"><%= @list.ta :links, 2 %></h1>
+    <%= f.error :links, class: 'center-text' %>
     <div class="link-labels flex-container">
-      <label class="center-text flex-child">Word</label>
-      <label class="center-text flex-child">Translation</label>
+      <label class="center-text flex-child"><%= @list.taa :links, :word1 %></label>
+      <label class="center-text flex-child"><%= @list.taa :links, :word2 %></label>
     </div>
     <%= f.fields_for :links, class: :hi do |links_form| %>
       <%= render("link_fields", f: links_form, tabindex: (@tabindex+=2)-2) %>
     <% end %>
-    <%= link_to("Add more fields", "#", id: "add_fields", class: 'center-text') %>
+    <%= link_to(t('lists.new.more_fields'), "#", id: "add_fields", class: 'center-text') %>
   </div>
   <%= f.button :submit, class: 'center-object' %>
 </div>

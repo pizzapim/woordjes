@@ -1,33 +1,126 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      user: User
+      list: List
+      link:
+        one: Word
+        other: Words
+      quiz_result:
+        one: Result
+        other: Results
+      quiz_error:
+        one: Mistake
+        other: Mistakes
+      attributes:
+        user:
+          password: Password
+          password_confirmation: Password(again)
+        list:
+          title: Title
+          subject: Subject
+          topic1: Topic 1
+          topic2: Topic 2
+        quiz_result:
+          quiz_type: Quiz method
+          direction: Direction
+        quiz_error:
+          answer: Your answer
+          word1: Word
+          word2: Correct answer
+        link:
+          word1: Word
+          word2: Translation
+      errors:
+        models:
+          list:
+            attributes:
+              links:
+                blank: At least one pair is required.
+          user:
+            attributes:
+              email:
+                taken: This email address is already in use!
+              password_confirmation:
+                confirmation: Enter your password a second time.
+        messages:
+          blank: Fill this in.
+          too_short: Too short.
+          too_long: Too long.
+          required_too: Fill this in too.
+  errors:
+    messages:
+      not_saved:
+        one: "Because of this error, this %{resource} couldn't be saved:"
+        other: "Because of these %{count} errors, this %{resource} couldn't be saved:"
+  devise:
+    failure:
+      user:
+        invalid: Incorrect email or password.
+        not_found_in_database: Incorrect email or password.
+    sessions:
+      user:
+        signed_in: You are now logged in.
+        signed_out: You are now logged out.
+  helpers:
+    submit:
+      list:
+        create: "Create %{model}"
+  simple_form:
+    placeholders:
+      list:
+        title: 'Spanish pages 8-13'
+        subject: Spanish
+        topic1: English
+        topic2: Spanish
+      link:
+        word1: Word
+        word2: Translation
+  time:
+    formats:
+      quiz_result_finished: "%d-%m-%Y %H:%M"
+  quiz_types:
+    normal: normal
+  quizzes:
+    normal:
+      check answer: Check answer
+      next_word: Next
+      incorrect_message: "Wrong. The correct answer is: "
+      view_result: Show result
+  home:
+    index:
+      banner_title: Learn words - The easy way
+      banner_subtitle: Create your own word lists and practice them. For free, forever.
+  lists:
+    index:
+      create_new_list: Create a new list
+      no_lists_yet: Create a list to get started!
+      show_this_list: Show list
+      quiz_this_list: Practice list
+    show:
+      return_to_lists_index: Return to my lists
+      edit_list: Edit list
+      show_quiz_result: Show result
+      delete_list: Delete list
+    new:
+      more_fields: More words
+      create_list_title: Create a new list
+  quiz_results:
+    show:
+      return_to_list: Return to list
+      for_html: Result for <i>%{list_title}</i>
+      finished_at: Finished at %{time}
+      error_number: Mistake number %{number}
+  quiz:
+    new:
+      start_quiz_header_html: Start new quiz for <i>%{list_title}</i>
+      start_quiz_button: Start practicing
+    quiz:
+      quiz_for_header_html: Practicing <i>%{list_title}</i>
+  signup_partial_title: Sign up for free!
+  signup_verb: Sign up
+  signup_noun: Signup
+  login_verb: Log in
+  login_noun: Login
+  logout: Logout
+  navigation_my_lists: My lists

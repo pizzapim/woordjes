@@ -71,3 +71,6 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
 # Use gon to parse ruby vars to js.
 gem 'gon', '~> 6.2', '>= 6.2.1'
+
+# To detect locale
+gem 'http_accept_language', '~> 2.1', '>= 2.1.1'
