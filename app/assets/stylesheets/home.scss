@@ -1,23 +1,24 @@
 #home-banner {
+  height: 70vh;
   width: 100%;
-  height: calc(100vh - 100px);
-  display: table;
+  background-image: url('books.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-#home-banner h2 {
-  font-size: 50px;
-  font-weight: 900;
-  color: var(--primary-color);
-  text-align: center;
-  line-height: 55px;
+#welcome-text {
+  width: 60%;
+  font-size: 8vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-#home-banner h1 {
-  font-size: 28px;
-  font-weight: 100px;
-  color: var(--primary-color);
+#welcome-text div {
+  flex: 1;
+}
+
+#welcome-text div h1 {
   text-align: center;
-  font-style: italic;
-  line-height: 34px;
-  padding-top: 15px;
 }

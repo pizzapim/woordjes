@@ -10,9 +10,10 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = Gon::Base.render_data(namespace: :parsed)
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700" rel="stylesheet"
   body class="#{controller_name}-#{action_name}"
     header
-      = link_to("woordjes", home_path, id: :site_logo)
+      = link_to("woordjes", home_path, id: 'site-logo')
       nav
         ul
           - if user_signed_in?
