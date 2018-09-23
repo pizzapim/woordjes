@@ -1,6 +1,15 @@
 #home-banner
   #welcome-text
-    div
-      h1 Study words
-    div
-      p Cool stuff here
+    h1 = t '.banner_title'
+    p = t '.banner_subtitle'
+#why-us
+  h1 Why use woordjes?
+  ul
+    li
+      p #{fa_icon :list} Create your own lists!
+    li
+      p #{fa_icon 'check-circle'} Lots of quiz types!
+    li
+      p #{fa_icon :money} Free to use!
+#home-sign-up
+  = render partial: 'shared/signup'

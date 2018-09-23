@@ -14,6 +14,7 @@ en:
         other: Mistakes
       attributes:
         user:
+          email: Email
           password: Password
           password_confirmation: Password(again)
         list:
@@ -89,8 +90,8 @@ en:
       view_result: Show result
   home:
     index:
-      banner_title: Learn words - The easy way
-      banner_subtitle: Create your own word lists and practice them. For free, forever.
+      banner_title: Study words
+      banner_subtitle: Create wordlists and practice your knowledge! For free, forever!
   lists:
     index:
       create_new_list: Create a new list
@@ -119,7 +120,7 @@ en:
       start_quiz_button: Start practicing
     quiz:
       quiz_for_header_html: Practicing <i>%{list_title}</i>
-  signup_partial_title: Sign up for free!
+  signup_partial_title: Sign up now!
   signup_verb: Sign up
   signup_noun: Signup
   login_verb: Log in

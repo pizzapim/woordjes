@@ -5,20 +5,55 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #welcome-text {
   width: 60%;
-  font-size: 8vw;
+  text-align: center;
+}
+
+#welcome-text h1 {
+  margin-bottom: 5vh;
+}
+
+#why-us {
+  padding-top: 3vh;
+  background-color: white;
+}
+
+#why-us h1 {
+  text-align: center;
+}
+
+#why-us ul {
+  margin-top: 3vh;
+  margin-left: 20vw;
+  list-style-type: none;
+}
+
+#why-us li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+#home-sign-up {
+  background-color: white;
+  padding-top: 3vh;
+}
+
+#home-sign-up .field {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  margin: 0 20px 15px;
 }
 
-#welcome-text div {
-  flex: 1;
-}
-
-#welcome-text div h1 {
+#home-sign-up label {
   text-align: center;
+}
+
+#home-sign-up h2 {
+  text-align: center;
+  margin-bottom: 10px;
 }

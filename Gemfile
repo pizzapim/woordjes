@@ -77,3 +77,6 @@ gem 'http_accept_language', '~> 2.1', '>= 2.1.1'
 
 # Use slim for (con)templating
 gem 'slim-rails', '~> 3.1', '>= 3.1.3'
+
+# Use font awesome for cool icons
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
