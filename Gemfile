@@ -61,7 +61,7 @@ end
 #gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use devise for user authentication
-gem 'devise', '~> 4.4.3'
+gem 'devise', '~> 4.7.1'
 
 # Use simple_form to easily create forms
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
